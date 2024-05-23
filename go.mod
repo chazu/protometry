@@ -1,4 +1,4 @@
-module github.com/louis030195/protometry
+module github.com/chazu/protometry
 
 go 1.14
 
