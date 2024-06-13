@@ -1,9 +1,9 @@
 package vector3
 
 import (
-    "github.com/louis030195/protometry/api/quaternion"
-    "math"
-    "math/rand"
+	"github.com/chazu/protometry/api/quaternion"
+	"math"
+	"math/rand"
 )
 
 // NewVector3 constructs a Vector3

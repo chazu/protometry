@@ -1,7 +1,7 @@
 package volume
 
 import (
-    vector3 "github.com/louis030195/protometry/api/vector3"
+	vector3 "github.com/chazu/protometry/api/vector3"
 )
 
 func cuboidTris() []int32 {
@@ -28,28 +28,28 @@ func NewMeshSquareCuboid(sideLength float64, centerBased bool) *Mesh {
 	if centerBased {
 		halfSide := sideLength / 2
 		vertices = []*vector3.Vector3{
-            vector3.NewVector3(-halfSide, -halfSide, -halfSide),
-            vector3.NewVector3(halfSide, -halfSide, -halfSide),
-            vector3.NewVector3(halfSide, halfSide, -halfSide),
-            vector3.NewVector3(-halfSide, halfSide, -halfSide),
+			vector3.NewVector3(-halfSide, -halfSide, -halfSide),
+			vector3.NewVector3(halfSide, -halfSide, -halfSide),
+			vector3.NewVector3(halfSide, halfSide, -halfSide),
+			vector3.NewVector3(-halfSide, halfSide, -halfSide),
 
-            vector3.NewVector3(-halfSide, halfSide, halfSide),
-            vector3.NewVector3(halfSide, halfSide, halfSide),
-            vector3.NewVector3(halfSide, -halfSide, halfSide),
-            vector3.NewVector3(-halfSide, -halfSide, halfSide),
+			vector3.NewVector3(-halfSide, halfSide, halfSide),
+			vector3.NewVector3(halfSide, halfSide, halfSide),
+			vector3.NewVector3(halfSide, -halfSide, halfSide),
+			vector3.NewVector3(-halfSide, -halfSide, halfSide),
 		}
 
 	} else {
 		vertices = []*vector3.Vector3{
-            vector3.NewVector3(0, 0, 0),
-            vector3.NewVector3(sideLength, 0, 0),
-            vector3.NewVector3(sideLength, sideLength, 0),
-            vector3.NewVector3(0, sideLength, 0),
+			vector3.NewVector3(0, 0, 0),
+			vector3.NewVector3(sideLength, 0, 0),
+			vector3.NewVector3(sideLength, sideLength, 0),
+			vector3.NewVector3(0, sideLength, 0),
 
-            vector3.NewVector3(0, sideLength, sideLength),
-            vector3.NewVector3(sideLength, sideLength, sideLength),
-            vector3.NewVector3(sideLength, 0, sideLength),
-            vector3.NewVector3(0, 0, sideLength),
+			vector3.NewVector3(0, sideLength, sideLength),
+			vector3.NewVector3(sideLength, sideLength, sideLength),
+			vector3.NewVector3(sideLength, 0, sideLength),
+			vector3.NewVector3(0, 0, sideLength),
 		}
 	}
 
@@ -61,15 +61,15 @@ func NewMeshRectangularCuboid(center, size vector3.Vector3) *Mesh {
 	var vertices []*vector3.Vector3
 	halfSize := size.Times(0.5)
 	vertices = []*vector3.Vector3{
-        vector3.NewVector3(-halfSize.X, -halfSize.Y, -halfSize.Z),
-        vector3.NewVector3(halfSize.X, -halfSize.Y, -halfSize.Z),
-        vector3.NewVector3(halfSize.X, halfSize.Y, -halfSize.Z),
-        vector3.NewVector3(-halfSize.X, halfSize.Y, -halfSize.Z),
+		vector3.NewVector3(-halfSize.X, -halfSize.Y, -halfSize.Z),
+		vector3.NewVector3(halfSize.X, -halfSize.Y, -halfSize.Z),
+		vector3.NewVector3(halfSize.X, halfSize.Y, -halfSize.Z),
+		vector3.NewVector3(-halfSize.X, halfSize.Y, -halfSize.Z),
 
-        vector3.NewVector3(-halfSize.X, halfSize.Y, halfSize.Z),
-        vector3.NewVector3(halfSize.X, halfSize.Y, halfSize.Z),
-        vector3.NewVector3(halfSize.X, -halfSize.Y, halfSize.Z),
-        vector3.NewVector3(-halfSize.X, -halfSize.Y, halfSize.Z),
+		vector3.NewVector3(-halfSize.X, halfSize.Y, halfSize.Z),
+		vector3.NewVector3(halfSize.X, halfSize.Y, halfSize.Z),
+		vector3.NewVector3(halfSize.X, -halfSize.Y, halfSize.Z),
+		vector3.NewVector3(-halfSize.X, -halfSize.Y, halfSize.Z),
 	}
 
 	return &Mesh{Vertices: vertices, Tris: cuboidTris()}

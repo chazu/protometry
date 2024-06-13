@@ -1,8 +1,8 @@
 
 # protometry
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/52ed0a7a050c470ababeb6e888d51878)](https://app.codacy.com/gh/louis030195/protometry?utm_source=github.com&utm_medium=referral&utm_content=louis030195/protometry&utm_campaign=Badge_Grade_Dashboard)
-[![PkgGoDev](https://pkg.go.dev/badge/louis030195/protometry)](https://pkg.go.dev/github.com/louis030195/protometry)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/52ed0a7a050c470ababeb6e888d51878)](https://app.codacy.com/gh/chazu/protometry?utm_source=github.com&utm_medium=referral&utm_content=chazu/protometry&utm_campaign=Badge_Grade_Dashboard)
+[![PkgGoDev](https://pkg.go.dev/badge/chazu/protometry)](https://pkg.go.dev/github.com/chazu/protometry)
 
 Geometry on protobuf stubs, could be also implemented in other languages.
 
@@ -13,7 +13,7 @@ This library uses protobuf types, allow doing math directly on networked data.
 ## Installation
 
 ```bash
-go get github.com/louis030195/protometry
+go get github.com/chazu/protometry
 ```
 
 ## Usage
@@ -22,8 +22,8 @@ go get github.com/louis030195/protometry
 package main
 
 import (
-    "github.com/louis030195/protometry/api/vector3"
-    "github.com/louis030195/protometry/api/volume"
+    "github.com/chazu/protometry/api/vector3"
+    "github.com/chazu/protometry/api/volume"
     "log"
 )
 

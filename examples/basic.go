@@ -1,9 +1,9 @@
 package main
 
 import (
-    vector32 "github.com/louis030195/protometry/api/vector3"
-    volume2 "github.com/louis030195/protometry/api/volume"
-    "log"
+	vector32 "github.com/chazu/protometry/api/vector3"
+	volume2 "github.com/chazu/protometry/api/volume"
+	"log"
 )
 
 func main() {

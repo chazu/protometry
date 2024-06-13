@@ -1,8 +1,8 @@
 package volume
 
 import (
-    "errors"
-    "github.com/louis030195/protometry/api/vector3"
+	"errors"
+	"github.com/chazu/protometry/api/vector3"
 )
 
 // NewBoxMinMax returns a new box using min max
@@ -65,15 +65,15 @@ func (b Box) Intersects(b2 Box) bool {
 func (b *Box) Split() [8]*Box {
 	center := b.GetCenter()
 	return [8]*Box{
-        NewBoxMinMax(b.Min.X, b.Min.Y, b.Min.Z, center.X, center.Y, center.Z),
-        NewBoxMinMax(b.Min.X, b.Min.Y, center.Z, center.X, center.Y, b.Max.Z),
-        NewBoxMinMax(b.Min.X, center.Y, b.Min.Z, center.X, b.Max.Y, center.Z),
-        NewBoxMinMax(b.Min.X, center.Y, center.Z, center.X, b.Max.Y, b.Max.Z),
+		NewBoxMinMax(b.Min.X, b.Min.Y, b.Min.Z, center.X, center.Y, center.Z),
+		NewBoxMinMax(b.Min.X, b.Min.Y, center.Z, center.X, center.Y, b.Max.Z),
+		NewBoxMinMax(b.Min.X, center.Y, b.Min.Z, center.X, b.Max.Y, center.Z),
+		NewBoxMinMax(b.Min.X, center.Y, center.Z, center.X, b.Max.Y, b.Max.Z),
 
-        NewBoxMinMax(center.X, b.Min.Y, b.Min.Z, b.Max.X, center.Y, center.Z),
-        NewBoxMinMax(center.X, b.Min.Y, center.Z, b.Max.X, center.Y, b.Max.Z),
-        NewBoxMinMax(center.X, center.Y, b.Min.Z, b.Max.X, b.Max.Y, center.Z),
-        NewBoxMinMax(center.X, center.Y, center.Z, b.Max.X, b.Max.Y, b.Max.Z),
+		NewBoxMinMax(center.X, b.Min.Y, b.Min.Z, b.Max.X, center.Y, center.Z),
+		NewBoxMinMax(center.X, b.Min.Y, center.Z, b.Max.X, center.Y, b.Max.Z),
+		NewBoxMinMax(center.X, center.Y, b.Min.Z, b.Max.X, b.Max.Y, center.Z),
+		NewBoxMinMax(center.X, center.Y, center.Z, b.Max.X, b.Max.Y, b.Max.Z),
 	}
 }
 
@@ -90,21 +90,21 @@ func (b *Box) Split() [8]*Box {
  *  0/___2/
  */
 func (b *Box) SplitFour(vertical bool) [4]*Box {
-    center := b.GetCenter()
-    if vertical {
-        return [4]*Box{
-            NewBoxMinMax(b.Min.X, b.Min.Y, b.Min.Z, center.X, b.Max.Y, center.Z),
-            NewBoxMinMax(b.Min.X, b.Min.Y, center.Z, center.X, b.Max.Y, b.Max.Z),
-            NewBoxMinMax(center.X, b.Min.Y, b.Min.Z, b.Max.X, b.Max.Y, center.Z),
-            NewBoxMinMax(center.X, b.Min.Y, center.Z, b.Max.X, b.Max.Y, b.Max.Z),
-        }
-    }
-    return [4]*Box{
-        NewBoxMinMax(b.Min.X, b.Min.Y, b.Min.Z, center.X, center.Y, b.Max.Z),
-        NewBoxMinMax(b.Min.X, center.Y, b.Min.Z, center.X, b.Max.Y, b.Max.Z),
-        NewBoxMinMax(center.X, b.Min.Y, b.Min.Z, b.Max.X, center.Y, b.Max.Z),
-        NewBoxMinMax(center.X, center.Y, b.Min.Z, b.Max.X, b.Max.Y, b.Max.Z),
-    }
+	center := b.GetCenter()
+	if vertical {
+		return [4]*Box{
+			NewBoxMinMax(b.Min.X, b.Min.Y, b.Min.Z, center.X, b.Max.Y, center.Z),
+			NewBoxMinMax(b.Min.X, b.Min.Y, center.Z, center.X, b.Max.Y, b.Max.Z),
+			NewBoxMinMax(center.X, b.Min.Y, b.Min.Z, b.Max.X, b.Max.Y, center.Z),
+			NewBoxMinMax(center.X, b.Min.Y, center.Z, b.Max.X, b.Max.Y, b.Max.Z),
+		}
+	}
+	return [4]*Box{
+		NewBoxMinMax(b.Min.X, b.Min.Y, b.Min.Z, center.X, center.Y, b.Max.Z),
+		NewBoxMinMax(b.Min.X, center.Y, b.Min.Z, center.X, b.Max.Y, b.Max.Z),
+		NewBoxMinMax(center.X, b.Min.Y, b.Min.Z, b.Max.X, center.Y, b.Max.Z),
+		NewBoxMinMax(center.X, center.Y, b.Min.Z, b.Max.X, b.Max.Y, b.Max.Z),
+	}
 }
 
 // Grows the Bounds to include the point. In-place and returns itself
@@ -125,6 +125,6 @@ func (b *Box) EncapsulateBox(o Box) *Box {
 
 // Intersection returns the intersection between two boxes
 func (b Box) Intersection(o Box) vector3.Vector3 {
-    panic(errors.New("intersection not implemented"))
-    return vector3.Vector3{}
+	panic(errors.New("intersection not implemented"))
+	return vector3.Vector3{}
 }

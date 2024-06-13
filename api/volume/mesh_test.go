@@ -1,7 +1,7 @@
 package volume
 
 import (
-	"github.com/louis030195/protometry/internal/utils"
+	"github.com/chazu/protometry/internal/utils"
 	"math/rand"
 	"testing"
 )

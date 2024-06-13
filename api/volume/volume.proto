@@ -8,7 +8,7 @@ option java_outer_classname = "Volume";
 option csharp_namespace = "Protometry.Volume";
 option go_package = "volume";
 
-import "github.com/louis030195/protometry/api/vector3/vector3.proto";
+import "github.com/chazu/protometry/api/vector3/vector3.proto";
 
 message Sphere {
   vector3.Vector3 center = 1;

@@ -6,7 +6,7 @@ package volume
 import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
-	vector3 "github.com/louis030195/protometry/api/vector3"
+	vector3 "github.com/chazu/protometry/api/vector3"
 	math "math"
 )
 

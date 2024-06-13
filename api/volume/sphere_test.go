@@ -3,7 +3,7 @@ package volume
 import (
 	"testing"
 
-	"github.com/louis030195/protometry/api/vector3"
+	"github.com/chazu/protometry/api/vector3"
 )
 
 func TestSphere_Intersect(t *testing.T) {
